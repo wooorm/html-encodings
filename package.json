@@ -1,6 +1,6 @@
 {
   "name": "html-encodings",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "List of known HTML character encoding labels",
   "license": "MIT",
   "keywords": [
