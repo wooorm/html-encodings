@@ -1,4 +1,4 @@
-# html-encodings [![Build Status][build-badge]][build-page] [![Coverage Status][coverage-badge]][coverage-page]
+# html-encodings [![Build Status][build-badge]][build-page]
 
 List of known HTML character encodings labels, from the [spec][].
 
@@ -10,19 +10,16 @@ List of known HTML character encodings labels, from the [spec][].
 npm install html-encodings
 ```
 
-**html-encodings** is also available as an AMD, CommonJS, and globals
-module, [uncompressed and compressed][releases].
-
 ## Usage
-
-Dependencies:
 
 ```javascript
 var inspect = require('util').inspect;
 var htmlEncodings = require('html-encodings');
+
+console.log(htmlEncodings.slice(0, 20));
 ```
 
-Inspecting the first 20 entries yields:
+Yields:
 
 ```js
 [ 'unicode-1-1-utf-8',
@@ -63,13 +60,7 @@ Inspecting the first 20 entries yields:
 
 [build-page]: https://travis-ci.org/wooorm/html-encodings
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/html-encodings.svg
-
-[coverage-page]: https://codecov.io/github/wooorm/html-encodings?branch=master
-
 [npm]: https://docs.npmjs.com/cli/install
-
-[releases]: https://github.com/wooorm/html-encodings/releases
 
 [license]: LICENSE
 

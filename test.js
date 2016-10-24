@@ -1,39 +1,23 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module html-encodings
- * @fileoverview Test suite for `html-encodings`.
- */
-
 'use strict';
 
-/* eslint-env node */
-
-/*
- * Module dependencies.
- */
-
+/* Dependencies. */
 var test = require('tape');
-var htmlEncodings = require('./index.js');
+var htmlEncodings = require('./');
 
-/*
- * Tests.
- */
-
+/* Tests. */
 test('htmlEncodings', function (t) {
-    t.ok(
-        Array.isArray(htmlEncodings),
-        'should be an `array`'
+  t.ok(
+    Array.isArray(htmlEncodings),
+    'should be an `array`'
+  );
+
+  htmlEncodings.forEach(function (encoding) {
+    t.equal(
+        typeof encoding,
+        'string',
+        '`' + encoding + '` should be a string'
     );
+  });
 
-    htmlEncodings.forEach(function (encoding) {
-        t.equal(
-            typeof encoding,
-            'string',
-            '`' + encoding + '` should be a string'
-        );
-    });
-
-    t.end();
+  t.end();
 });
