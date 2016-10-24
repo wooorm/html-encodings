@@ -47,6 +47,11 @@ Yields:
 `Object.<Array.<string>>` — Map where each key is a group
 label, and each value is a list of synonymous lower-case encodings.
 
+## Related
+
+*   [`html-dangerous-encodings`](https://github.com/wooorm/html-dangerous-encodings)
+    — List of dangerous HTML character encoding labels
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
