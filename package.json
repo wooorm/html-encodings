@@ -15,12 +15,13 @@
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
   ],
-  "main": "index.json",
   "files": [
-    "index.json"
+    "index.js",
+    "groups.json"
   ],
   "dependencies": {},
   "devDependencies": {
+    "bail": "^1.0.1",
     "browserify": "^13.0.0",
     "concat-stream": "^1.5.1",
     "esmangle": "^1.0.1",
@@ -33,7 +34,7 @@
   "scripts": {
     "build-crawl": "node build",
     "build-md": "remark . --quiet --frail",
-    "build-bundle": "browserify index.json --bare -s htmlEncodings > html-encodings.js",
+    "build-bundle": "browserify index.js --bare -s htmlEncodings > html-encodings.js",
     "build-mangle": "esmangle html-encodings.js > html-encodings.min.js",
     "build": "npm run build-crawl && npm run build-md && npm run build-bundle && npm run build-mangle",
     "lint": "xo",
@@ -42,6 +43,9 @@
   },
   "xo": {
     "space": true,
+    "rules": {
+      "guard-for-in": "off"
+    },
     "ignores": [
       "html-encodings.js"
     ]

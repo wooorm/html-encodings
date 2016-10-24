@@ -1,6 +1,6 @@
 # html-encodings [![Build Status][build-badge]][build-page]
 
-List of known HTML character encodings labels, from the [spec][].
+Info on known HTML character encodings labels, from the [spec][].
 
 ## Installation
 
@@ -16,39 +16,36 @@ npm install html-encodings
 var inspect = require('util').inspect;
 var htmlEncodings = require('html-encodings');
 
-console.log(htmlEncodings.slice(0, 20));
+console.log(htmlEncodings.list.slice(0, 10));
+console.log(htmlEncodings.groups['UTF-8']);
 ```
 
 Yields:
 
 ```js
-[ 'unicode-1-1-utf-8',
+[ 'utf8',
   'utf-8',
-  'utf8',
+  'unicode-1-1-utf-8',
   '866',
   'cp866',
-  'csibm866',
   'ibm866',
-  'csisolatin2',
-  'iso-8859-2',
-  'iso-ir-101',
-  'iso8859-2',
-  'iso88592',
-  'iso_8859-2',
-  'iso_8859-2:1987',
+  'csibm866',
   'l2',
   'latin2',
-  'csisolatin3',
-  'iso-8859-3',
-  'iso-ir-109',
-  'iso8859-3' ]
+  'iso88592' ]
+[ 'utf8', 'utf-8', 'unicode-1-1-utf-8' ]
 ```
 
 ## API
 
-### `htmlEncodings`
+### `htmlEncodings.list`
 
-`Array.<string>` — List of lower-case types.
+`Array.<string>` — List of all lower-case encodings.
+
+### `htmlEncodings.groups`
+
+`Object.<Array.<string>>` — Map where each key is a group
+label, and each value is a list of synonymous lower-case encodings.
 
 ## License
 
