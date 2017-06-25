@@ -1,6 +1,5 @@
 'use strict';
 
-/* Dependencies. */
 var fs = require('fs');
 var path = require('path');
 var https = require('https');
@@ -8,13 +7,8 @@ var bail = require('bail');
 var concat = require('concat-stream');
 var flatMap = require('lodash.flatmap');
 
-/* Constants. */
-var INPUT = 'https://encoding.spec.whatwg.org/encodings.json';
-var OUTPUT = path.join(__dirname, 'groups.json');
-
-/* Core. */
 https
-  .request(INPUT, function (response) {
+  .request('https://encoding.spec.whatwg.org/encodings.json', function (response) {
     response.pipe(concat(function (body) {
       var groups = {};
 
@@ -25,7 +19,7 @@ https
         });
       });
 
-      fs.writeFile(OUTPUT, JSON.stringify(groups, 0, 2) + '\n', bail);
+      fs.writeFile(path.join(__dirname, 'groups.json'), JSON.stringify(groups, 0, 2) + '\n', bail);
     }));
   })
   .end();

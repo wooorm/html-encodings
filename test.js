@@ -1,11 +1,9 @@
 'use strict';
 
-/* Dependencies. */
 var assert = require('assert');
 var test = require('tape');
 var htmlEncodings = require('./');
 
-/* Tests. */
 test('htmlEncodings.list', function (t) {
   t.ok(
     Array.isArray(htmlEncodings.list),
@@ -21,7 +19,6 @@ test('htmlEncodings.list', function (t) {
   t.end();
 });
 
-/* Tests. */
 test('htmlEncodings.groups', function (t) {
   t.equal(
     typeof htmlEncodings.groups,
