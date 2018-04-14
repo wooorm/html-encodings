@@ -1,40 +1,39 @@
-'use strict';
+'use strict'
 
-var assert = require('assert');
-var test = require('tape');
-var htmlEncodings = require('.');
+var assert = require('assert')
+var test = require('tape')
+var htmlEncodings = require('.')
 
-test('htmlEncodings.list', function (t) {
-  t.ok(
-    Array.isArray(htmlEncodings.list),
-    'should be an `array`'
-  );
+test('htmlEncodings.list', function(t) {
+  t.ok(Array.isArray(htmlEncodings.list), 'should be an `array`')
 
-  t.doesNotThrow(function () {
-    htmlEncodings.list.forEach(function (enc) {
-      assert(typeof enc, 'string', '`' + enc + '` should be string');
-    });
-  }, 'should be all `string`');
+  t.doesNotThrow(function() {
+    htmlEncodings.list.forEach(each)
 
-  t.end();
-});
+    function each(enc) {
+      assert(typeof enc, 'string', '`' + enc + '` should be string')
+    }
+  }, 'should be all `string`')
 
-test('htmlEncodings.groups', function (t) {
-  t.equal(
-    typeof htmlEncodings.groups,
-    'object',
-    'should be an `object`'
-  );
+  t.end()
+})
 
-  t.doesNotThrow(function () {
-    var groups = htmlEncodings.groups;
+test('htmlEncodings.groups', function(t) {
+  t.equal(typeof htmlEncodings.groups, 'object', 'should be an `object`')
 
-    Object.keys(groups).forEach(function (label) {
-      groups[label].forEach(function (enc) {
-        assert(typeof enc, 'string', '`' + enc + '` should be string');
-      });
-    });
-  }, 'should be all `string`');
+  t.doesNotThrow(function() {
+    var groups = htmlEncodings.groups
 
-  t.end();
-});
+    Object.keys(groups).forEach(group)
+
+    function group(label) {
+      groups[label].forEach(each)
+    }
+
+    function each(enc) {
+      assert(typeof enc, 'string', '`' + enc + '` should be string')
+    }
+  }, 'should be all `string`')
+
+  t.end()
+})

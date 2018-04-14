@@ -1,17 +1,17 @@
-'use strict';
+'use strict'
 
-var groups = require('./groups');
+var groups = require('./groups.json')
 
-exports.groups = groups;
-exports.list = unwrap();
+exports.groups = groups
+exports.list = unwrap()
 
 function unwrap() {
-  var result = [];
-  var key;
+  var result = []
+  var key
 
   for (key in groups) {
-    result = result.concat(groups[key]);
+    result = result.concat(groups[key])
   }
 
-  return result;
+  return result
 }

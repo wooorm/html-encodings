@@ -13,11 +13,11 @@ npm install html-encodings
 ## Usage
 
 ```javascript
-var inspect = require('util').inspect;
-var htmlEncodings = require('html-encodings');
+var inspect = require('util').inspect
+var htmlEncodings = require('html-encodings')
 
-console.log(htmlEncodings.list.slice(0, 10));
-console.log(htmlEncodings.groups['UTF-8']);
+console.log(htmlEncodings.list.slice(0, 10))
+console.log(htmlEncodings.groups['UTF-8'])
 ```
 
 Yields:
