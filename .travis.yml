@@ -1,9 +1,10 @@
 language: node_js
 node_js:
-- '4.0'
-- '8.0'
+- lts/boron
+- node
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: PyJvYuWr9inLCqvxR8xeFTctMQdiImcXZ1Ko7hVpUPeDUNJYO2VDWAk7lHsKKJ4WuGxOe7eD+2fPottQhU7ayBr6l3CniOprMGGnDJC/8L+B6KOEarm/O2g57dJWXZPTR7OIf+Og9q9TMWnIxNJF2C7gPPnEzWiiIjT69d/TBhTInY0G/C2XxZx06LT6lenApBKwaHmfzWxJRlvyM+7gF7U5FDTuQe1LvR+pzju3CttKupYa/VCX19ebVbqADL+nHcWSCocaEUnniUp182uBW+z9LxfznSnnPq76z/PMwq740rQdTX7JUxOYXX4u3zs0WOw+sFeEJNAj9F7FQ73I8M66GzopWm6+hxups4VrIRIsCxYasir3twaFflf92n13HjHBRoq1bZgGql7g9FD/Vq0ZYCuc+CvZlgXaRzs5Gf9DG8xw/U1LmzFAn7SmZX0PZSWxAyJL4r5rlq/T2jfE9kbyshlj3acuhiMpPehgHuyUiSwDPOwsWBV2ZOFQdA2N1yGhszy3SqdMt1NFS6VXnKLSgKEh2dR0We8x7W1EBj7M74dnkFJZs2az5a5ub0KJA+FDRHH0ATiguNawtQf4cZ68/sFIzpZZjbgbuoTUcr88cikSxng5PBDPK1j/lQqRl/O+ML6FOsn0Yvi2M2yr/NxoX1cryxobqT85kShw60U=
   file:
@@ -11,4 +12,3 @@ deploy:
     - "html-encodings.min.js"
   on:
     tags: true
-    node: '8.0'
