@@ -2,7 +2,7 @@
 
 var assert = require('assert');
 var test = require('tape');
-var htmlEncodings = require('./');
+var htmlEncodings = require('.');
 
 test('htmlEncodings.list', function (t) {
   t.ok(
