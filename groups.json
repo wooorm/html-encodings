@@ -285,6 +285,7 @@
     "csiso2022kr",
     "iso-2022-cn",
     "iso-2022-kr",
+    "replacement",
     "iso-2022-cn-ext"
   ],
   "UTF-16BE": [
