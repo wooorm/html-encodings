@@ -64,7 +64,7 @@ label, and each value is a list of synonymous lower-case encodings.
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[license]: LICENSE
+[license]: license
 
 [author]: http://wooorm.com
 
