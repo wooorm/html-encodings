@@ -1,4 +1,8 @@
-# html-encodings [![Build Status][build-badge]][build-page]
+# html-encodings
+
+[![Build][build-badge]][build]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 Info on known HTML character encodings labels, from the [spec][].
 
@@ -60,7 +64,15 @@ label, and each value is a list of synonymous lower-case encodings.
 
 [build-badge]: https://img.shields.io/travis/wooorm/html-encodings.svg
 
-[build-page]: https://travis-ci.org/wooorm/html-encodings
+[build]: https://travis-ci.org/wooorm/html-encodings
+
+[downloads-badge]: https://img.shields.io/npm/dm/html-encodings.svg
+
+[downloads]: https://www.npmjs.com/package/html-encodings
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/html-encodings.svg
+
+[size]: https://bundlephobia.com/result?p=html-encodings
 
 [npm]: https://docs.npmjs.com/cli/install
 
