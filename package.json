@@ -34,7 +34,7 @@
   },
   "scripts": {
     "generate": "node build",
-    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "build-bundle": "browserify index.js --bare -s htmlEncodings > html-encodings.js",
     "build-mangle": "esmangle html-encodings.js > html-encodings.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
