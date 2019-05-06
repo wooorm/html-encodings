@@ -66,6 +66,6 @@ label, and each value is a list of synonymous lower-case encodings.
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
 [spec]: https://encoding.spec.whatwg.org/#names-and-labels
