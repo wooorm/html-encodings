@@ -1,14 +1,14 @@
 language: node_js
 node_js:
-- lts/boron
-- node
+  - lts/boron
+  - node
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: kn6245XKmXT1u+cdPDlqnNOwGCc1BxeRHe2RPkHR0JxeT1swxvr7Q9Ul5Y/CFXVr4zade9eaKYu+oAPxjPPT6L5l8qU361vd3zKQsxcxM0Dk8pWbJgBcRE9eSrEac4I5m61M8N90UFb3Ryy+VIrpnDI6IHeEDmtFRW75MwFW/hx4WM0aQU/ovGDpQN0t/+q8dG9RKdUT9/sptdCR0ehDFFnwgxghgNk7rgNItfP5CIYUfjctbmIk8iYwPytKexHGEqjYu09I8u1CoTlKHAwY366eF8Q5jz7pDiVjutxBPynDdPneX2c5G9AQ5ZkIzr4qURyTSLbGIz6cYrRVEjWuyeugwZuZyNHi5LBquZGYpa4HcgQXXSJJ86StGNUuy+mmosK6zmkfysQFSXt5sDVTdvsgMOvIbRTTIpe7oWv9DpurcSCGVIK1Vt3MN09r6V2pLQTkCCHUnvO9/mZHTbjoz8TVg0rU9Cju6kTDZmcl2oClIPa9Lt9nfICV3ofzQeOnujLKBiWmXizqJutQ6llofmVNaZwoUz3vhJAiIKMSLOWJfl61EAFsELGS4t6iGqlOMcIBBV1c9haSOfj1Mv0aRM9PHe/++PeP7mB0bWC7QsbY9auBlUv86yPOideSQLmAC/uJ/B90IhUTsuTrtNcdaRlkA79TKbSZfjuPCfpF8Jo=
+    secure: et8+9iDEOON0u1E15JXmvODCdEOdSkbTGGZEE/Xjfmi9E8oxOn6v4nlFFN7aus+K0Y+XzNfKQ2M6KRkJuhgzKA6oqxNjjOcjYDTQMk87bTAWGs/nEtdVUe/WtmtBP2FSJ+Br7bXTMgnHwmd0kX9e4ToELCO86H7YTs0r2C7PKymaEBemK+hAy7ASfoMkSRSjUT42jYUDKpngh5wOYZZ0zX9vHie7Hv+sVmOIziIoE5DxM9OIP8WPyPK20zKpqctdp4pC0sUWtW+lr3eMJNdZ1pdCxklO5RLY4zJcUIQUzmgy3GrD6shnBKq/NWkXw+X+c8djz+AnAhglTWDCdjYHOX81RgBXDRxohWqmg+sQqXyIy7tqJoqlIoz52NLxqzFQti1ArMX4httSJ6aOogEwx8UOC3x1EL9TvbZQpT/9hsvlBWdsiDmHxI6LKcJc0LHlCngEDWSZ2PMWt8lUM3Byg7OQ+zGQVbWQPJwqLX5Kwpy9F1FfPM7A4HcwEY0P5kD93BLVMeC2e9nQTfrQ3J5PW9AbDG9K97lzCGeliyCbMZb4Chc4zyiV2KZ5VePt6bRuI+E28NDbBzFWsSm7h4BnbmFkHDokSf73rtIfVCgQfFmNXlz1reozgztsUmbOu6WiyLa141KcyR/tJhrRfbogrELXHPOuJ/QhVXObrtwR0Xc=
   file:
-    - "html-encodings.js"
-    - "html-encodings.min.js"
+    - 'html-encodings.js'
+    - 'html-encodings.min.js'
   on:
     tags: true
