@@ -25,16 +25,15 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "bail": "^1.0.1",
+    "bail": "^1.0.0",
     "browserify": "^16.0.0",
     "concat-stream": "^2.0.0",
-    "lodash.flatmap": "^4.2.0",
-    "prettier": "^1.12.0",
-    "remark-cli": "^6.0.0",
-    "remark-preset-wooorm": "^4.0.0",
-    "tape": "^4.4.0",
-    "tinyify": "^2.5.0",
-    "xo": "^0.24.0"
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.25.0"
   },
   "scripts": {
     "generate": "node build",
@@ -43,7 +42,7 @@
     "build-mangle": "browserify . -s htmlEncodings -p tinyify > html-encodings.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
-    "test": "npm run generate && npm run format && npm run build && npm run test-api"
+    "test": "npm run format && npm run build && npm run test-api"
   },
   "prettier": {
     "tabWidth": 2,

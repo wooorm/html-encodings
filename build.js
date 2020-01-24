@@ -4,7 +4,6 @@ var fs = require('fs')
 var https = require('https')
 var bail = require('bail')
 var concat = require('concat-stream')
-var flatMap = require('lodash.flatmap')
 
 https
   .request('https://encoding.spec.whatwg.org/encodings.json', onrequest)
@@ -22,7 +21,7 @@ function onconcat(body) {
   fs.writeFile('groups.json', JSON.stringify(groups, 0, 2) + '\n', bail)
 
   function add(group) {
-    return flatMap(group.encodings, map)
+    return group.encodings.flatMap(map)
   }
 
   function map(entry) {
