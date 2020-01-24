@@ -17,7 +17,6 @@ npm install html-encodings
 ## Use
 
 ```js
-var inspect = require('util').inspect
 var htmlEncodings = require('html-encodings')
 
 console.log(htmlEncodings.list.slice(0, 10))
