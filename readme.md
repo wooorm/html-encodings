@@ -6,17 +6,17 @@
 
 Info on known HTML character encodings labels, from the [spec][].
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install html-encodings
 ```
 
-## Usage
+## Use
 
-```javascript
+```js
 var inspect = require('util').inspect
 var htmlEncodings = require('html-encodings')
 
@@ -44,12 +44,12 @@ Yields:
 
 ### `htmlEncodings.list`
 
-`Array.<string>` — List of all lower-case encodings.
+`Array.<string>` — List of lowercase encodings.
 
 ### `htmlEncodings.groups`
 
-`Object.<Array.<string>>` — Map where each key is a group
-label, and each value is a list of synonymous lower-case encodings.
+`Object.<Array.<string>>` — Map where each key is a group label, and each value
+is a list of synonymous lowercase encodings.
 
 ## Related
 
