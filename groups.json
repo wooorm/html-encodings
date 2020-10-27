@@ -2,6 +2,9 @@
   "UTF-8": [
     "utf8",
     "utf-8",
+    "unicode11utf8",
+    "unicode20utf8",
+    "x-unicode20utf8",
     "unicode-1-1-utf-8"
   ],
   "IBM866": [
@@ -289,11 +292,17 @@
     "iso-2022-cn-ext"
   ],
   "UTF-16BE": [
-    "utf-16be"
+    "utf-16be",
+    "unicodefffe"
   ],
   "UTF-16LE": [
+    "ucs-2",
     "utf-16",
-    "utf-16le"
+    "unicode",
+    "utf-16le",
+    "csunicode",
+    "unicodefeff",
+    "iso-10646-ucs-2"
   ],
   "x-user-defined": [
     "x-user-defined"
