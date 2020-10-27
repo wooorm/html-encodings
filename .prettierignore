@@ -1,2 +1,4 @@
 html-encodings.js
 html-encodings.min.js
+*.json
+*.md

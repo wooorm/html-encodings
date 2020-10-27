@@ -31,6 +31,6 @@ function onconcat(body) {
 }
 
 function sort(a, b) {
-  var res = a.length - b.length
-  return res === 0 ? a.charCodeAt(0) - b.charCodeAt(0) : res
+  var result = a.length - b.length
+  return result === 0 ? a.charCodeAt(0) - b.charCodeAt(0) : result
 }

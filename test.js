@@ -4,10 +4,10 @@ var assert = require('assert')
 var test = require('tape')
 var htmlEncodings = require('.')
 
-test('htmlEncodings.list', function(t) {
+test('htmlEncodings.list', function (t) {
   t.ok(Array.isArray(htmlEncodings.list), 'should be an `array`')
 
-  t.doesNotThrow(function() {
+  t.doesNotThrow(function () {
     htmlEncodings.list.forEach(each)
 
     function each(enc) {
@@ -18,10 +18,10 @@ test('htmlEncodings.list', function(t) {
   t.end()
 })
 
-test('htmlEncodings.groups', function(t) {
+test('htmlEncodings.groups', function (t) {
   t.equal(typeof htmlEncodings.groups, 'object', 'should be an `object`')
 
-  t.doesNotThrow(function() {
+  t.doesNotThrow(function () {
     var groups = htmlEncodings.groups
 
     Object.keys(groups).forEach(group)
