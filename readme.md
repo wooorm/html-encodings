@@ -1,6 +1,7 @@
 # html-encodings
 
 [![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
@@ -61,9 +62,13 @@ is a list of synonymous lowercase encodings.
 
 <!-- Definition -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/html-encodings.svg
+[build-badge]: https://github.com/wooorm/html-encodings/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/html-encodings
+[build]: https://github.com/wooorm/html-encodings/actions
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/html-encodings.svg
+
+[coverage]: https://codecov.io/github/wooorm/html-encodings
 
 [downloads-badge]: https://img.shields.io/npm/dm/html-encodings.svg
 
