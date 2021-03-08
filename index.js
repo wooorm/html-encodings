@@ -227,11 +227,13 @@ export var groups = {
 
 var own = {}.hasOwnProperty
 
+/** @type {string[]} */
 export var list = unwrap()
 
 function unwrap() {
   var result = []
   var key
+
   for (key in groups) {
     if (own.call(groups, key)) {
       result = result.concat(groups[key])

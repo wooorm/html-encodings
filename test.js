@@ -9,8 +9,8 @@ test('list', function (t) {
 
   t.doesNotThrow(function () {
     var index = -1
-    while (++index < list) {
-      assert(
+    while (++index < list.length) {
+      assert.equal(
         typeof list[index],
         'string',
         '`' + list[index] + '` should be string'
@@ -32,7 +32,7 @@ test('groups', function (t) {
       if (own.call(groups, label)) {
         index = -1
         while (++index < groups[label].length) {
-          assert(
+          assert.equal(
             typeof groups[label][index],
             'string',
             '`' + groups[label][index] + '` should be string'

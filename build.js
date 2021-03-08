@@ -34,6 +34,7 @@ function onconcat(body) {
       '',
       'var own = {}.hasOwnProperty',
       '',
+      '/** @type {string[]} */',
       'export var list = unwrap()',
       '',
       'function unwrap() {',
