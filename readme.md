@@ -9,6 +9,9 @@ Info on known HTML character encodings labels, from the [spec][].
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -18,38 +21,50 @@ npm install html-encodings
 ## Use
 
 ```js
-var htmlEncodings = require('html-encodings')
+import {list, groups} from 'html-encodings'
 
-console.log(htmlEncodings.list.slice(0, 10))
-console.log(htmlEncodings.groups['UTF-8'])
+console.log(list.slice(0, 10))
+console.log(groups['UTF-8'])
 ```
 
 Yields:
 
 ```js
-[ 'utf8',
+[
+  'utf8',
   'utf-8',
+  'unicode11utf8',
+  'unicode20utf8',
+  'x-unicode20utf8',
   'unicode-1-1-utf-8',
   '866',
   'cp866',
   'ibm866',
-  'csibm866',
-  'l2',
-  'latin2',
-  'iso88592' ]
-[ 'utf8', 'utf-8', 'unicode-1-1-utf-8' ]
+  'csibm866'
+]
+[
+  'utf8',
+  'utf-8',
+  'unicode11utf8',
+  'unicode20utf8',
+  'x-unicode20utf8',
+  'unicode-1-1-utf-8'
+]
 ```
 
 ## API
 
-### `htmlEncodings.list`
+This package exports the following identifiers: `list` and `groups`.
+There is no default export.
 
-`Array.<string>` — List of lowercase encodings.
+### `list`
 
-### `htmlEncodings.groups`
+`string[]` — List of lowercase encodings.
 
-`Object.<Array.<string>>` — Map where each key is a group label, and each value
-is a list of synonymous lowercase encodings.
+### `groups`
+
+`Object.<string, string[]>` — Map where each key is a group label, and each
+value is a list of synonymous lowercase encodings.
 
 ## Related
 

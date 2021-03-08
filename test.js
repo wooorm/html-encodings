@@ -1,19 +1,19 @@
-'use strict'
+import assert from 'assert'
+import test from 'tape'
+import {list, groups} from './index.js'
 
-var assert = require('assert')
-var test = require('tape')
-var htmlEncodings = require('.')
+var own = {}.hasOwnProperty
 
-test('htmlEncodings.list', function (t) {
-  t.ok(Array.isArray(htmlEncodings.list), 'should be an `array`')
+test('list', function (t) {
+  t.ok(Array.isArray(list), 'should be an `array`')
 
   t.doesNotThrow(function () {
     var index = -1
-    while (++index < htmlEncodings.list) {
+    while (++index < list) {
       assert(
-        typeof htmlEncodings.list[index],
+        typeof list[index],
         'string',
-        '`' + htmlEncodings.list[index] + '` should be string'
+        '`' + list[index] + '` should be string'
       )
     }
   }, 'should be all `string`')
@@ -21,22 +21,23 @@ test('htmlEncodings.list', function (t) {
   t.end()
 })
 
-test('htmlEncodings.groups', function (t) {
-  t.equal(typeof htmlEncodings.groups, 'object', 'should be an `object`')
+test('groups', function (t) {
+  t.equal(typeof groups, 'object', 'should be an `object`')
 
   t.doesNotThrow(function () {
-    var groups = htmlEncodings.groups
     var label
     var index
 
     for (label in groups) {
-      index = -1
-      while (++index < groups[label].length) {
-        assert(
-          typeof groups[label][index],
-          'string',
-          '`' + groups[label][index] + '` should be string'
-        )
+      if (own.call(groups, label)) {
+        index = -1
+        while (++index < groups[label].length) {
+          assert(
+            typeof groups[label][index],
+            'string',
+            '`' + groups[label][index] + '` should be string'
+          )
+        }
       }
     }
   }, 'should be all `string`')

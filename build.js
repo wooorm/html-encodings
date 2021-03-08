@@ -1,9 +1,7 @@
-'use strict'
-
-var fs = require('fs')
-var https = require('https')
-var bail = require('bail')
-var concat = require('concat-stream')
+import fs from 'fs'
+import https from 'https'
+import bail from 'bail'
+import concat from 'concat-stream'
 
 https
   .request('https://encoding.spec.whatwg.org/encodings.json', onrequest)
@@ -29,7 +27,31 @@ function onconcat(body) {
     }
   }
 
-  fs.writeFile('groups.json', JSON.stringify(groups, 0, 2) + '\n', bail)
+  fs.writeFile(
+    'index.js',
+    [
+      'export var groups = ' + JSON.stringify(groups, null, 2),
+      '',
+      'var own = {}.hasOwnProperty',
+      '',
+      'export var list = unwrap()',
+      '',
+      'function unwrap() {',
+      '  var result = []',
+      '  var key',
+      '',
+      '  for (key in groups) {',
+      '    if (own.call(groups, key)) {',
+      '      result = result.concat(groups[key])',
+      '    }',
+      '  }',
+      '',
+      '  return result',
+      '}',
+      ''
+    ].join('\n'),
+    bail
+  )
 }
 
 function sort(a, b) {
