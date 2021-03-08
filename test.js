@@ -8,10 +8,13 @@ test('htmlEncodings.list', function (t) {
   t.ok(Array.isArray(htmlEncodings.list), 'should be an `array`')
 
   t.doesNotThrow(function () {
-    htmlEncodings.list.forEach(each)
-
-    function each(enc) {
-      assert(typeof enc, 'string', '`' + enc + '` should be string')
+    var index = -1
+    while (++index < htmlEncodings.list) {
+      assert(
+        typeof htmlEncodings.list[index],
+        'string',
+        '`' + htmlEncodings.list[index] + '` should be string'
+      )
     }
   }, 'should be all `string`')
 
@@ -23,15 +26,18 @@ test('htmlEncodings.groups', function (t) {
 
   t.doesNotThrow(function () {
     var groups = htmlEncodings.groups
+    var label
+    var index
 
-    Object.keys(groups).forEach(group)
-
-    function group(label) {
-      groups[label].forEach(each)
-    }
-
-    function each(enc) {
-      assert(typeof enc, 'string', '`' + enc + '` should be string')
+    for (label in groups) {
+      index = -1
+      while (++index < groups[label].length) {
+        assert(
+          typeof groups[label][index],
+          'string',
+          '`' + groups[label][index] + '` should be string'
+        )
+      }
     }
   }, 'should be all `string`')
 

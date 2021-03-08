@@ -14,20 +14,22 @@ function onrequest(response) {
 }
 
 function onconcat(body) {
+  var lists = JSON.parse(body)
   var groups = {}
+  var index = -1
+  var offset
+  var entry
 
-  JSON.parse(body).forEach(add)
+  while (++index < lists.length) {
+    offset = -1
+
+    while (++offset < lists[index].encodings.length) {
+      entry = lists[index].encodings[offset]
+      groups[entry.name] = entry.labels.concat().sort(sort)
+    }
+  }
 
   fs.writeFile('groups.json', JSON.stringify(groups, 0, 2) + '\n', bail)
-
-  function add(group) {
-    return group.encodings.flatMap(map)
-  }
-
-  function map(entry) {
-    groups[entry.name] = entry.labels.concat().sort(sort)
-    return entry.labels
-  }
 }
 
 function sort(a, b) {
