@@ -1,6 +1,6 @@
-import fs from 'fs'
-import https from 'https'
-import bail from 'bail'
+import fs from 'node:fs'
+import https from 'node:https'
+import {bail} from 'bail'
 import concat from 'concat-stream'
 
 https
@@ -12,11 +12,11 @@ function onrequest(response) {
 }
 
 function onconcat(body) {
-  var lists = JSON.parse(body)
-  var groups = {}
-  var index = -1
-  var offset
-  var entry
+  const lists = JSON.parse(body)
+  const groups = {}
+  let index = -1
+  let offset
+  let entry
 
   while (++index < lists.length) {
     offset = -1
@@ -30,20 +30,20 @@ function onconcat(body) {
   fs.writeFile(
     'index.js',
     [
-      'export var groups = ' + JSON.stringify(groups, null, 2),
+      'export const groups = ' + JSON.stringify(groups, null, 2),
       '',
-      'var own = {}.hasOwnProperty',
+      'const own = {}.hasOwnProperty',
       '',
       '/** @type {string[]} */',
-      'export var list = unwrap()',
+      'export const list = unwrap()',
       '',
       'function unwrap() {',
-      '  var result = []',
-      '  var key',
+      '  const result = []',
+      '  let key',
       '',
       '  for (key in groups) {',
       '    if (own.call(groups, key)) {',
-      '      result = result.concat(groups[key])',
+      '      result.push(...groups[key])',
       '    }',
       '  }',
       '',
@@ -56,6 +56,6 @@ function onconcat(body) {
 }
 
 function sort(a, b) {
-  var result = a.length - b.length
+  const result = a.length - b.length
   return result === 0 ? a.charCodeAt(0) - b.charCodeAt(0) : result
 }

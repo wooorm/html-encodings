@@ -1,4 +1,4 @@
-export var groups = {
+export const groups = {
   'UTF-8': [
     'utf8',
     'utf-8',
@@ -225,18 +225,18 @@ export var groups = {
   'x-user-defined': ['x-user-defined']
 }
 
-var own = {}.hasOwnProperty
+const own = {}.hasOwnProperty
 
 /** @type {string[]} */
-export var list = unwrap()
+export const list = unwrap()
 
 function unwrap() {
-  var result = []
-  var key
+  const result = []
+  let key
 
   for (key in groups) {
     if (own.call(groups, key)) {
-      result = result.concat(groups[key])
+      result.push(...groups[key])
     }
   }
 

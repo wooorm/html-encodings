@@ -1,14 +1,14 @@
-import assert from 'assert'
+import assert from 'node:assert'
 import test from 'tape'
 import {list, groups} from './index.js'
 
-var own = {}.hasOwnProperty
+const own = {}.hasOwnProperty
 
 test('list', function (t) {
   t.ok(Array.isArray(list), 'should be an `array`')
 
   t.doesNotThrow(function () {
-    var index = -1
+    let index = -1
     while (++index < list.length) {
       assert.equal(
         typeof list[index],
@@ -25,12 +25,11 @@ test('groups', function (t) {
   t.equal(typeof groups, 'object', 'should be an `object`')
 
   t.doesNotThrow(function () {
-    var label
-    var index
+    let label
 
     for (label in groups) {
       if (own.call(groups, label)) {
-        index = -1
+        let index = -1
         while (++index < groups[label].length) {
           assert.equal(
             typeof groups[label][index],
