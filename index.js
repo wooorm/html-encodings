@@ -1,3 +1,8 @@
+/**
+ * Map of group labels to lists of synonymous encodings (lowercase).
+ *
+ * @type {Record<string, Array<string>>}
+ */
 export const groups = {
   'UTF-8': [
     'utf8',
@@ -227,11 +232,17 @@ export const groups = {
 
 const own = {}.hasOwnProperty
 
-/** @type {string[]} */
+/**
+ * List of all encodings (lowercase).
+ *
+ * @type {Array<string>}
+ */
 export const list = unwrap()
 
 function unwrap() {
+  /** @type {Array<string>} */
   const result = []
+  /** @type {string} */
   let key
 
   for (key in groups) {

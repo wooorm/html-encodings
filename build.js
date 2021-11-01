@@ -7,7 +7,9 @@ https
   .request('https://encoding.spec.whatwg.org/encodings.json', (response) => {
     response.pipe(
       concat((body) => {
+        /** @type {Array<{encodings: Array<{labels: string[], name: string}>, heading: string}>} */
         const lists = JSON.parse(String(body))
+        /** @type {Record<string, Array<string>>} */
         const groups = {}
         let index = -1
 
@@ -27,15 +29,26 @@ https
         fs.writeFile(
           'index.js',
           [
+            '/**',
+            ' * Map of group labels to lists of synonymous encodings (lowercase).',
+            ' *',
+            ' * @type {Record<string, Array<string>>}',
+            ' */',
             'export const groups = ' + JSON.stringify(groups, null, 2),
             '',
             'const own = {}.hasOwnProperty',
             '',
-            '/** @type {string[]} */',
+            '/**',
+            ' * List of all encodings (lowercase).',
+            ' *',
+            ' * @type {Array<string>}',
+            ' */',
             'export const list = unwrap()',
             '',
             'function unwrap() {',
+            '  /** @type {Array<string>} */',
             '  const result = []',
+            '  /** @type {string} */',
             '  let key',
             '',
             '  for (key in groups) {',

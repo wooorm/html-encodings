@@ -25,6 +25,7 @@ test('groups', function (t) {
   t.equal(typeof groups, 'object', 'should be an `object`')
 
   t.doesNotThrow(function () {
+    /** @type {string} */
     let label
 
     for (label in groups) {

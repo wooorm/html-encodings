@@ -59,12 +59,12 @@ There is no default export.
 
 ### `list`
 
-`string[]` — List of lowercase encodings.
+List of all encodings (`Array<string>`).
 
 ### `groups`
 
-`Object.<string, string[]>` — Map where each key is a group label, and each
-value is a list of synonymous lowercase encodings.
+Map of group labels to lists of synonymous encodings
+(`Record<string, Array<string>>`).
 
 ## Related
 
