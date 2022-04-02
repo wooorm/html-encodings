@@ -42,17 +42,17 @@ In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 npm install html-encodings
 ```
 
-In Deno with [Skypack][]:
+In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import * as htmlEncodings from 'https://cdn.skypack.dev/html-encodings@3?dts'
+import * as htmlEncodings from 'https://esm.sh/html-encodings@3'
 ```
 
-In browsers with [Skypack][]:
+In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import * as htmlEncodings from 'https://cdn.skypack.dev/html-encodings@3?min'
+  import * as htmlEncodings from 'https://esm.sh/html-encodings@3?bundle'
 </script>
 ```
 
@@ -152,7 +152,7 @@ See [How to Contribute to Open Source][contribute].
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[skypack]: https://www.skypack.dev
+[esmsh]: https://esm.sh
 
 [license]: license
 
