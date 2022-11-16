@@ -21,7 +21,9 @@ https
             const labels = [...entry.labels]
             groups[entry.name] = labels.sort((a, b) => {
               const result = a.length - b.length
-              return result === 0 ? a.charCodeAt(0) - b.charCodeAt(0) : result
+              return result === 0
+                ? (a.codePointAt(0) || 0) - (b.codePointAt(0) || 0)
+                : result
             })
           }
         }
