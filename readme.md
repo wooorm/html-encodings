@@ -36,7 +36,7 @@ probably never!
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+In Node.js (version 14.14+, 16.0+), install with [npm][]:
 
 ```sh
 npm install html-encodings
@@ -45,14 +45,14 @@ npm install html-encodings
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import * as htmlEncodings from 'https://esm.sh/html-encodings@3'
+import {list, groups} from 'https://esm.sh/html-encodings@3'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import * as htmlEncodings from 'https://esm.sh/html-encodings@3?bundle'
+  import {list, groups} from 'https://esm.sh/html-encodings@3?bundle'
 </script>
 ```
 
@@ -92,26 +92,27 @@ Yields:
 
 ## API
 
-This package exports the following identifiers: `list` and `groups`.
+This package exports the identifier `list` and `groups`.
 There is no default export.
 
 ### `list`
 
-List of all encodings (`Array<string>`).
+List of all encodings (lowercase) (`Array<string>`).
 
 ### `groups`
 
-Map of group labels to lists of synonymous encodings
+Map of group labels to lists of synonymous (lowercase) encodings
 (`Record<string, Array<string>>`).
 
 ## Types
 
 This package is fully typed with [TypeScript][].
+It exports no additional types.
 
 ## Compatibility
 
 This package is at least compatible with all maintained versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 It also works in Deno and modern browsers.
 
 ## Security
